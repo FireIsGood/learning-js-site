@@ -1,0 +1,124 @@
+$background-color: #f8edeb;
+$nav-color: #342920;
+$scroll-track: #fcd5ce;
+$scroll-thumb: #ffb5a7;
+$icon-color: #ffb5a7;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: $background-color;
+  padding: 0;
+  margin: 0;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: $scroll-track;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $scroll-thumb;
+  }
+}
+
+main {
+  margin-left: 5rem;
+  padding: 0 1rem;
+
+  h1:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.nav-bar {
+  position: fixed;
+  width: 5rem;
+  height: 100vh;
+  background-color: $nav-color;
+  transition: width 200ms ease;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: calc(100vh - 1rem);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    li {
+      .nav-link {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: flex-start;
+        height: 5rem;
+        text-decoration: none;
+        filter: grayscale(100%) opacity(0.4);
+        transition: filter 100ms ease;
+
+        &:hover {
+          filter: grayscale(0%) opacity(1);
+        }
+
+        .nav-text {
+          margin-left: 1rem;
+          font-size: x-large;
+          align-self: center;
+          color: white;
+          display: none;
+        }
+
+        svg {
+          min-width: 4rem;
+          width: 4rem;
+          fill: $icon-color;
+
+          .cls-1 {
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 600px) {
+    &:hover {
+      width: 16rem;
+
+      .nav-text {
+        display: block !important;
+      }
+    }
+    li:last-of-type {
+      margin-top: auto;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  main {
+    margin-left: 0;
+  }
+  .nav-bar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+
+    ul {
+      flex-direction: row;
+      justify-content: space-around;
+
+      .nav-text {
+        display: none !important;
+      }
+      .nav-link {
+        justify-content: center;
+      }
+    }
+  }
+}

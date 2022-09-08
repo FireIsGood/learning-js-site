@@ -1,0 +1,52 @@
+body {
+    padding-bottom: 30rem;
+}
+
+h1 {
+    color: red;
+}
+
+li {
+    list-style-type: armenian;
+}
+
+.special {
+    color: orange;
+    font-weight: bold;
+}
+
+li em {
+    color: rebeccapurple;
+}
+
+h1 + p {
+    font-size: 200%;
+}
+
+a:link {
+    color: purple
+}
+
+a:visited {
+    color: pink
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body h1 + p .special {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+  }
+
+p {
+    color: blue
+}
+
+.background-text {
+    background: aliceblue url(../assets/sagaHYPERnom.gif) 0 0 repeat fixed;
+    color: red;
+    text-shadow: 0 0 4px rgba(0, 0, 0, .5)
+}

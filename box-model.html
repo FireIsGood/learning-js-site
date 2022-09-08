@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/box-model.css" />
+    <link rel="stylesheet" href="./styles/mainstyle.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="./assets/sagaHYPERnom.gif" alt="Saga Nom Gif" />
+        <h1>Fire's epic site or something</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">back home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Weird box model stuff??</h1>
+      <p>
+        I was trying to make some examples of elements in a list but found there
+        to be whitespace between every element. This isn't easily fixable with
+        css or html by themselves. What a pain.
+      </p>
+      <p>This is a block-flex style box</p>
+      <figure class="code-example">
+        <pre>
+  &lt;ul style="display: block-flex;"&gt;
+    &lt;li>text 1&lt;/li&gt;
+    &lt;li>text 2&lt;/li&gt;
+  &lt;/ul&gt;</pre
+        >
+      </figure>
+      <ul class="outline" style="display: block-flex">
+        <li>text 1</li>
+        <li>text 2</li>
+      </ul>
+      <p>It fills up the entire space but has whitespace. Not very helpful</p>
+      <p>This is an inline-flex style box</p>
+      <figure class="code-example">
+        <pre>
+  &lt;ul style="display: inline-flex;"&gt;
+    &lt;li>text 1&lt;/li&gt;
+    &lt;li>text 2&lt;/li&gt;
+  &lt;/ul&gt;</pre
+        >
+      </figure>
+      <ul class="outline" style="display: inline-flex">
+        <li>text 1</li>
+        <li>text 2</li>
+      </ul>
+      <p>
+        It fills up only to fit the contents, but <em>DOESN'T</em> have the
+        whitespace. We would probably just place this in a div center wrapper
+        and call it a day
+      </p>
+      <br />
+      <hr />
+      <h2>Wtf so what do we do???</h2>
+      <p>
+        I found some helpful methods from
+        <a href="https://www.youtube.com/watch?v=R8DN4ibYZ7s">this video</a>.
+      </p>
+      <p>
+        We can do some REALLY jank stuff, for instance, remove the linebreaks:
+      </p>
+      <figure class="code-example">
+        <pre>
+  &lt;ul&gt;
+    &lt;li>text 1&lt;/li&gt;&lt;li>text 2&lt;/li&gt;
+  &lt;/ul&gt;</pre
+        >
+      </figure>
+      <div class="wrapper outline">
+        <ul class="fix-inner">
+          <li>text 1</li>
+          <li>text 2</li>
+        </ul>
+      </div>
+      <p>
+        It works, but looks weird and gets cleaned up by your IDE's beautifier,
+        which is a massive pain, especially if you've set it to do that on every
+        save
+      </p>
+      <p>We could also comment out the whitespace between the elements:</p>
+      <figure class="code-example">
+        <pre>
+  &lt;ul&gt;
+     &lt;li>text 1&lt;/li&gt;&lt;!--
+  --&gt;&lt;li>text 2&lt;/li&gt;
+  &lt;/ul&gt;</pre
+        >
+      </figure>
+      <div class="wrapper outline">
+        <ul class="fix-inner">
+          <li>text 1</li>
+          <li>text 2</li>
+        </ul>
+      </div>
+      <p>
+        Same as before, it gets messed up by your beautifier. Still not a very
+        clean solution.
+      </p>
+      <p>
+        So I've just decided to use a wrapper and be done with it. (This is what
+        I've done to draw it for this page)
+      </p>
+      <figure class="code-example">
+        <pre>
+  &lt;div class="wrapper outline"&gt;
+    &lt;ul class="fix-inner"&gt;
+      &lt;li&gt;text 1&lt;/li&gt;
+      &lt;li&gt;text 2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;</pre
+        >
+      </figure>
+      <div class="wrapper outline">
+        <ul class="fix-inner">
+          <li>text 1</li>
+          <li>text 2</li>
+        </ul>
+      </div>
+      <p>What a pain.</p>
+    </main>
+  </body>
+</html>
