@@ -23,20 +23,22 @@
     <main>
       <h1>Weird box model stuff??</h1>
       <p>
-        I was trying to make some examples of elements in a list but found there
-        to be whitespace between every element. This isn't easily fixable with
-        css or html by themselves. What a pain.
+        I was trying to make some examples of elements in a list within a div,
+        but found there to be whitespace between every element. Turns out that
+        the linebreaks count as a character or something so it adds a space to
+        the element. This isn't easily fixable with css or html by themselves.
+        What a pain.
       </p>
-      <p>This is a block-flex style box</p>
+      <p>This is a regular style box</p>
       <figure class="code-example">
         <pre>
-  &lt;ul style="display: block-flex;"&gt;
+  &lt;ul style="display: block;"&gt;
     &lt;li>text 1&lt;/li&gt;
     &lt;li>text 2&lt;/li&gt;
   &lt;/ul&gt;</pre
         >
       </figure>
-      <ul class="outline" style="display: block-flex">
+      <ul class="outline" style="display: block">
         <li>text 1</li>
         <li>text 2</li>
       </ul>
@@ -55,9 +57,9 @@
         <li>text 2</li>
       </ul>
       <p>
-        It fills up only to fit the contents, but <em>DOESN'T</em> have the
-        whitespace. We would probably just place this in a div center wrapper
-        and call it a day
+        It fills up only to fit the contents which might not be what I want, but
+        more importantly <em>DOESN'T</em> have the whitespace. We would probably
+        just place this in a div center wrapper and call it a day
       </p>
       <br />
       <hr />
