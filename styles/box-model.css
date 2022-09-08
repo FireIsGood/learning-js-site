@@ -38,6 +38,7 @@ hr {
 
 .code-example {
   position: relative;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 2.5rem 1rem 1rem;
   margin: 1rem 0;

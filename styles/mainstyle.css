@@ -82,6 +82,11 @@ main article h3 {
 main article p:first-of-type::first-letter {
   font-size: 200%;
 }
+main code {
+  background-color: #ddd;
+  border-radius: 3px;
+  padding: 0 3px;
+}
 
 footer {
   display: grid;

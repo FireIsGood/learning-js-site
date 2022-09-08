@@ -1,0 +1,96 @@
+main {
+  display: grid;
+}
+
+.box {
+  display: grid;
+  place-content: center;
+  width: 20rem;
+  height: 20rem;
+  place-self: center;
+}
+
+.box-1 {
+  background-color: #ECC5FB;
+  border: 5px solid #CDF0EA;
+}
+
+.box-2 {
+  background: linear-gradient(90deg, rgba(100, 92, 170, 1) 0%, rgba(191, 172, 224, 1) 50%, rgba(100, 92, 170, 1) 100%);
+  border: 5px solid #EBC7E8;
+  writing-mode: vertical-lr;
+}
+
+.box-3 {
+  background-image: url(.././assets/fishpog\ blush.png);
+  background-position: center center;
+  background-size: cover;
+  color: white;
+  font-weight: 900;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+  border: 5px solid #EE6983;
+}
+
+.box-4 {
+  outline: 5px solid #377D71;
+  place-content: initial;
+  display: grid;
+  background-color: oldlace;
+}
+
+.box-4>* {
+  grid-area: 1/-1;
+}
+
+.box-4-img {
+  background: url(.././assets/sagaHYPERnom.gif);
+  mix-blend-mode: ;
+  background-position: center;
+  background-size: cover;
+}
+
+.box-4-content {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  font-size: xx-large;
+  z-index: 1;
+}
+
+.box-4::after {
+  content: "";
+  background-color: #00f;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  grid-area: 1/-1;
+}
+
+.box-5 {
+  font-size: 450%;
+  color: white;
+  animation: colorRotate 3000ms linear infinite;
+}
+
+@keyframes colorRotate {
+  from {
+    background-color: #6666ff;
+    outline: 5px solid #00ff00;
+  }
+  10% {
+    background-color: #0099ff;
+    outline: 5px solid #ff3399;
+  }
+  50% {
+    background-color: #00ff00;
+    outline: 5px solid #6666ff;
+  }
+  75% {
+    background-color: #ff3399;
+    outline: 5px solid #0099ff;
+  }
+  100% {
+    background-color: #6666ff;
+    outline: 5px solid #0099ff;
+  }
+}

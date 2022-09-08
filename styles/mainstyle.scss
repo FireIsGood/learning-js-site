@@ -105,7 +105,7 @@ main {
   article {
     h1 {
       color: green;
-      font-size: 200%
+      font-size: 200%;
     }
 
     h3 {
@@ -119,6 +119,11 @@ main {
         }
       }
     }
+  }
+  code {
+    background-color: #ddd;
+    border-radius: 3px;
+    padding: 0 3px;
   }
 }
 
