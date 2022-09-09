@@ -1,0 +1,126 @@
+body {
+  overflow-y: scroll;
+}
+
+details summary {
+  padding: 4px 8px;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  background-color: lightsteelblue;
+  border: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  list-style: none;
+}
+
+details[open] table {
+  padding-bottom: 1rem;
+}
+
+.funky {
+  /* spacing */
+  /* typography */
+  /* graphics and colors */
+  /* zebra striping */
+  /* caption */
+}
+.funky table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+}
+.funky thead th:nth-child(1) {
+  width: 30%;
+}
+.funky thead th:nth-child(2) {
+  width: 20%;
+}
+.funky thead th:nth-child(3) {
+  width: 15%;
+}
+.funky thead th:nth-child(4) {
+  width: 35%;
+}
+.funky th,
+.funky td {
+  padding: 20px;
+}
+.funky html {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+.funky thead th,
+.funky tfoot th {
+  font-family: "Rock Salt", cursive;
+}
+.funky th {
+  letter-spacing: 2px;
+}
+.funky td {
+  letter-spacing: 1px;
+}
+.funky tbody td {
+  text-align: center;
+}
+.funky tfoot th {
+  text-align: right;
+}
+.funky thead,
+.funky tfoot {
+  background: url(../../assets/more-tables/leopardskin.jpg);
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+.funky thead th,
+.funky tfoot th,
+.funky tfoot td {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+  border: 3px solid purple;
+}
+.funky tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+.funky tbody tr:nth-child(even) {
+  background-color: #e495e4;
+}
+.funky tbody tr {
+  background-image: url(../../assets/more-tables/noise.png);
+}
+.funky table {
+  background-color: #ff33cc;
+}
+.funky caption {
+  font-family: "Rock Salt", cursive;
+  padding: 20px;
+  font-style: italic;
+  caption-side: bottom;
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+.normal {
+  border-collapse: collapse;
+}
+.normal caption {
+  padding-top: 0.5rem;
+}
+.normal th {
+  padding: 0.3em;
+}
+.normal tr :not(:last-child):nth-child(1) {
+  text-align: left;
+}
+.normal tr :not(:last-child):nth-child(2), .normal tr :not(:last-child):nth-child(3) {
+  text-align: right;
+}
+.normal tr:nth-child(even) {
+  background-color: #bbb;
+}
+.normal > * {
+  border-bottom: 1px solid #999;
+}
+.normal tfoot th {
+  text-align: right !important;
+}
