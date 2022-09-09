@@ -1,0 +1,82 @@
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  font-family: "Fira Sans", sans-serif;
+  padding-left: 1rem;
+
+  & > div:not(:last-of-type) {
+    padding-bottom: 1rem;
+  }
+
+  & input:focus {
+    outline: red;
+  }
+
+  label {
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+
+    &.inline {
+      display: inline;
+    }
+  }
+
+  input {
+    padding: 0.5rem;
+
+    &[type="color"] {
+      box-sizing: content-box;
+      min-height: 2.5rem;
+      border: none;
+      padding: 0;
+    }
+
+    &[type="checkbox"] {
+      margin: 0.5rem 0 1rem;
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+
+    &[type="radio"] {
+      margin: 0.5rem 0;
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+
+  input[id="real"]:checked {
+    & ~ .hidden-text {
+      display: inline;
+    }
+    & ~ .unhidden-text {
+      display: none;
+    }
+  }
+
+  .hidden-text {
+    position: relative;
+    bottom: 0.9rem;
+    display: none;
+  }
+
+  .unhidden-text {
+    position: relative;
+    bottom: 0.9rem;
+    display: inline;
+  }
+
+  fieldset {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-right: 4rem;
+  }
+}

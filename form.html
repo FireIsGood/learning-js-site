@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="./styles/mainstyle.css" />
+    <link rel="stylesheet" href="./styles/form.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="./assets/sagaHYPERnom.gif" alt="Saga Nom Gif" />
+        <h1>Fire's epic site or something</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">back home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>the ultimate form</h1>
+      <p>
+        this form will take the form of your form to form a formatted form of
+        your form. Otherwise known as an online quiz. Honestly quite incredible.
+      </p>
+      <form action="">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Name" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Email"
+            pattern="email"
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <div>
+          <label for="favorite-color">Favorite Color</label>
+          <input type="color" name="password" id="favorite-color" />
+        </div>
+        <div>
+          <label for="real">Are you?</label>
+          <input type="checkbox" name="real" id="real" />
+          <span class="hidden-text">YES, I AM!</span>
+          <span class="unhidden-text">NO, I AM NOT!</span>
+        </div>
+        <fieldset>
+          <legend>Choose the correct value</legend>
+          <div>
+            <input type="radio" name="choose" id="correct" />
+            <label for="correct" class="inline">I am correct, the other values are liars</label>
+          </div>
+          <div>
+            <input type="radio" name="choose" id="incorrect" />
+            <label for="incorrect" class="inline">I am incorrect, the other values are liars</label>
+          </div>
+          <div>
+            <input type="radio" name="choose" id="true" />
+            <label for="true" class="inline">I am the only one telling the truth, I am correct.</label>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>
