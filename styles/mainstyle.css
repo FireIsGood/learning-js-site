@@ -16,6 +16,7 @@ header {
   padding-top: 4px;
   background-color: #3d8361;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3) inset;
+  font-family: sans-serif;
 }
 header div {
   display: grid;
