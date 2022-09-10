@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Heebo:wght@500&display=swap');
+
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #c9c1c1;
+}
+
+/* Layout */
+
+main {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5fr 3fr 2fr;
+  grid-auto-flow: row dense;
+  gap: 1rem;
+  padding: 1rem;
+  padding-bottom: 4rem;
+  max-width: 80rem;
+  margin-inline: auto;
+  background-color: white;
+  justify-content: center;
+}
+
+main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  z-index: -1;
+}
+
+@media screen and (max-width: 50rem) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+header,
+footer {
+  border-top: 5px solid #aa6666;
+  border-bottom: 5px solid #aa6666;
+  background-color: #fae7e7;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+h1,
+h2 {
+  font-family: 'Heebo', sans-serif;
+  letter-spacing: 1px;
+}
+
+p,
+li {
+  font-family: 'Bitter', serif;
+  line-height: 1.5;
+}
+
+main p {
+  text-align: justify;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+main h2+p {
+  text-indent: 2rem;
+}
+
+/* link styles */
+
+a:link {
+  text-decoration: none;
+  color: #aa6666;
+}
+
+a:visited {
+  color: #6d3e3e;
+}
+
+a:hover {
+  text-decoration: underline;
+  background-color: #ecc9c9;
+}
+
+a:active {
+  background-color: #aa6666;
+  color: white;
+}
+
+a[href^="http"] {
+  padding-right: 12px;
+  background-image: url(../assets/community-school/external-link-52.png);
+  background-repeat: no-repeat;
+  background-size: 8px;
+  background-position: center right;
+}
+
+ul {
+  list-style: square;
+}
+
+/* Nav bar styles */
+
+nav ul {
+  padding: 0;
+  list-style: none;
+}
+
+nav p {
+  text-align: center;
+  outline: 1px solid #aa6666;
+  margin: .5rem;
+  padding: 1rem;
+  border-radius: .5rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+}
+
+nav p:hover {
+  background-color: #ecc9c9;
+}
+
+nav p:active {
+  background-color: #aa6666;
+  color: white;
+}
