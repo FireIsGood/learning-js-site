@@ -75,6 +75,13 @@ footer {
   text-align: center;
 }
 
+img {
+  display: cover;
+  width: 100%;
+  outline: 2px solid #aa6666;
+  box-shadow: 0 0 4px black;
+}
+
 main h2+p {
   text-indent: 2rem;
 }
