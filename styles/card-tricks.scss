@@ -3,57 +3,18 @@
 $accent-clr: #22bbff;
 $card-overflow: 12;
 
-body {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  min-height: 100vh;
-  background-color: rgb(17, 17, 17);
-  color: white;
-  font-family: "Noto Sans Display", sans-serif;
-
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: url("../assets/card-tricks/ak-website-stripe.png");
-  //   z-index: -1;
-  // }
+@mixin delay-appearance {
+  animation: 250ms delay-appearance 2s ease-out forwards;
 }
 
-p {
-  margin: 0;
-}
-
-.title {
-  background-image: url("../assets/card-tricks/websitebg2.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.title-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  & * {
-    font-family: "Noto Sans", sans-serif;
-    margin: 0;
+@keyframes delay-appearance {
+  from {
+    visibility: hidden;
     opacity: 0;
-    animation: 1s float-in calc(var(--delay) * 1s) ease-out forwards;
   }
-
-  & * + * {
-    margin-top: 1rem;
+  to {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -65,6 +26,69 @@ p {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  font-family: "Noto Sans Display", sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+.title {
+  background-image: url("../assets/card-tricks/websitebg2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .menu-icon {
+    position: absolute;
+    width: 40px;
+    margin: 1rem;
+    opacity: 0;
+    cursor: pointer;
+    visibility: hidden;
+    @include delay-appearance();
+
+    .menu-bar {
+      display: block;
+      padding-top: 8px;
+      width: 40px;
+      height: 2px;
+      border-top: 4px solid rgba($color: #fff, $alpha: 0.8);
+    }
+  }
+
+  .title-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    & * {
+      font-family: "Noto Sans", sans-serif;
+      margin: 0;
+      opacity: 0;
+      animation: 1s float-in calc(var(--delay) * 1s) ease-out forwards;
+    }
+
+    & * + * {
+      margin-top: 1rem;
+    }
   }
 }
 
@@ -117,17 +141,57 @@ p {
 
   transition-duration: 200ms;
 
-  h2 {
-    overflow: hidden;
-    max-height: 11.25rem;
+  p {
+    position: relative;
+    text-align: left;
+    margin-right: 10px;
+    width: -moz-fit-content;
+    width: fit-content;
     transition: color 500ms;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -2rem;
+      width: 100%;
+      height: 100%;
+      background-image: url(../assets/card-tricks/sanity-icon.png);
+      background-position: center right;
+      background-size: 1.5rem 1.5rem;
+      background-repeat: no-repeat;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -2%;
+      width: 104%;
+      height: 100%;
+      background-color: $accent-clr;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 250ms;
+      z-index: -1;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0;
+    overflow: hidden;
+    max-height: 13.5rem;
   }
 
   &:hover {
     transform: translateY(-1.5em);
 
-    h2 {
-      color: $accent-clr;
+    p {
+      color: black;
+
+      &::after {
+        transform: scaleX(1);
+      }
     }
 
     & ~ .card {
