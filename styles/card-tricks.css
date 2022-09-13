@@ -49,8 +49,11 @@ body {
   font-family: "Noto Sans Display", sans-serif;
 }
 
-p {
+p,
+h1,
+h2 {
   margin: 0;
+  padding: 0;
 }
 
 .title {
@@ -109,9 +112,11 @@ p {
   box-shadow: 0 0 1rem black;
   margin: 1rem;
   padding: 1rem;
+  flex-grow: 1;
   flex-basis: 30%;
 }
 .card-columns > *:nth-child(2) {
+  flex-grow: 1;
   flex-basis: 70%;
 }
 
@@ -146,7 +151,7 @@ p {
 .card p {
   position: relative;
   text-align: left;
-  margin-right: 10px;
+  margin: 0 0 1rem;
   width: -moz-fit-content;
   width: -webkit-fit-content;
   width: fit-content;
@@ -180,18 +185,19 @@ p {
 .card h2 {
   margin-bottom: 0;
   overflow: hidden;
-  max-height: 13.5rem;
+  max-height: 14rem;
+  line-height: 1.25;
 }
-.card:hover {
+.card:hover, .card:active {
   transform: translateY(-1.5em);
 }
-.card:hover p {
+.card:hover p, .card:active p {
   color: black;
 }
-.card:hover p::after {
+.card:hover p::after, .card:active p::after {
   transform: scaleX(1);
 }
-.card:hover ~ .card {
+.card:hover ~ .card, .card:active ~ .card {
   transform: translateX(12rem);
 }
 .card .card-author {
@@ -249,4 +255,10 @@ footer ul {
 }
 footer li + li {
   margin-left: 1rem;
+}
+
+@media (max-width: 600px) {
+  .card-columns {
+    flex-wrap: wrap;
+  }
 }
