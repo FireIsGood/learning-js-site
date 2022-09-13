@@ -1,19 +1,89 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display:wght@300&family=Noto+Sans+Mono&display=swap");
 
 $accent-clr: #22bbff;
 $card-overflow: 12;
 
 body {
+  position: relative;
   padding: 0;
   margin: 0;
   min-height: 100vh;
   background-color: rgb(17, 17, 17);
+  color: white;
+  font-family: "Noto Sans Display", sans-serif;
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: url("../assets/card-tricks/ak-website-stripe.png");
+  //   z-index: -1;
+  // }
+}
+
+p {
+  margin: 0;
+}
+
+.title {
   background-image: url("../assets/card-tricks/websitebg2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
-  font-family: "Fira Mono", monospace;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  & * {
+    font-family: "Noto Sans", sans-serif;
+    margin: 0;
+    opacity: 0;
+    animation: 1s float-in calc(var(--delay) * 1s) ease-out forwards;
+  }
+
+  & * + * {
+    margin-top: 1rem;
+  }
+}
+
+@keyframes float-in {
+  from {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card-columns {
+  display: flex;
+  text-align: center;
+  gap: 1rem;
+  padding-bottom: 4rem;
+
+  & > *:nth-child(1) {
+    outline: 1px solid #535353;
+    box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 1);
+    margin: 1rem;
+    padding: 1rem;
+    flex-basis: 30%;
+  }
+  & > *:nth-child(2) {
+    flex-basis: 70%;
+  }
 }
 
 .card-list {
@@ -36,8 +106,15 @@ body {
   min-width: 250px;
   padding: 1.5rem;
   background-color: rgb(24, 24, 24);
+  background-image: url("../assets/card-tricks/ak-corner-logo.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 60%;
   outline: 1px solid #535353;
-  box-shadow: -1rem 0 1rem rgba($color: #000000, $alpha: 0.3);
+  box-shadow: -1rem 0 1rem rgba($color: #000000, $alpha: 0.5);
+
+  font-family: "Noto Sans Mono", monospace;
+
   transition-duration: 200ms;
 
   h2 {
@@ -95,5 +172,28 @@ body {
       color: inherit;
       text-decoration: none;
     }
+  }
+}
+
+section {
+  background-color: #17181a;
+}
+
+footer {
+  min-height: 3rem;
+  background-color: #111;
+  padding: 0.5rem;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+    line-height: 1.5;
+  }
+
+  li + li {
+    margin-left: 1rem;
   }
 }
