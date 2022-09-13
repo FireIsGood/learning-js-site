@@ -1,0 +1,180 @@
+$backgroundColor: rgba(238, 242, 230, 1);
+$navColor: #3d8361;
+$buttonColor: #1c6758;
+$buttonText: #e0ffff;
+$linkText: #e6f4f7;
+$outlineColor: 1px solid
+  rgba(
+    $color: #a8a8a8,
+    $alpha: 1,
+  );
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+header {
+  overflow: visible;
+  position: relative;
+  background-color: #9bd2ff;
+  z-index: 1;
+
+  .center {
+    display: flex;
+    padding-top: 4px;
+
+    div {
+      background-color: #646464;
+      padding: 4px;
+      border-radius: 0.5rem;
+      display: grid;
+      place-items: center;
+      grid-template-columns: auto 1fr;
+      margin-inline: auto;
+
+      h1 {
+        margin: 0 0 0 1rem;
+        color: transparent;
+        background: linear-gradient(
+          0deg,
+          rgb(215, 216, 216) 0%,
+          rgb(162, 248, 219) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+      img {
+        background-color: $buttonColor;
+        border-radius: 10px;
+        outline: $outlineColor;
+        height: 64px;
+        float: left;
+      }
+      clear: left;
+    }
+  }
+
+  nav {
+    display: grid;
+    width: 100%;
+    place-items: center;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        text-align: center;
+        background-color: $buttonColor;
+        color: $buttonText;
+        border-radius: 4px;
+        min-width: 8ch;
+        padding: 5px 4px;
+        margin: 4px;
+
+        a {
+          color: $linkText;
+        }
+      }
+    }
+  }
+  svg {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+body {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  perspective: 10px;
+  transform-style: preserve-3d;
+}
+
+.images {
+  transform-style: preserve-3d;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+
+  img {
+    width: 100vw;
+    height: 1200px;
+    grid-area: 1 / 1;
+    object-fit: cover;
+  }
+
+  #sky {
+    transform-origin: center bottom 0;
+    transform: translateZ(-10px) scale(2);
+    z-index: -1;
+  }
+}
+
+main {
+  background-color: rgb(61, 61, 61);
+  padding: 4rem 1rem;
+  padding-bottom: 20rem;
+
+  & * {
+    margin: 0;
+  }
+  & > * + * {
+    margin-top: 4rem;
+  }
+}
+
+section {
+  margin-inline: auto;
+  max-width: 60rem;
+  font-size: 1.5rem;
+  color: #999;
+
+  h1 {
+    color: white;
+    text-align: center;
+  }
+
+  p:first-of-type {
+    text-indent: 4ch;
+  }
+
+  & > * + * {
+    margin-top: 1rem;
+  }
+}
+
+.two-column {
+  display: flex;
+  gap: 3rem;
+
+  & > div {
+    padding: 1rem;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    flex: 1 1 50%;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 4px dotted white;
+  width: 7rem;
+  margin-inline: auto;
+}
