@@ -117,8 +117,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    margin-inline: 1rem;
     ul {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       position: relative;
       padding: 0;
       gap: 0.5rem;
@@ -151,13 +154,13 @@ h2 {
 }
 
 .info-boxes {
-  padding: 8rem;
+  padding: 8rem 0;
 
   .content {
     margin-inline: auto;
     max-width: 60rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(30ch, 1fr));
   }
 
   .text-box {
