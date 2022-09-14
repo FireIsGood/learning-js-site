@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display:wght@300&family=Noto+Sans+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display:wght@300;700&family=Noto+Sans+Mono&display=swap");
 
 $accent-clr: #22bbff;
 $card-overflow: 12;
@@ -96,16 +96,76 @@ h2 {
       font-size: 3rem;
     }
 
-    & * {
+    * {
       font-family: "Noto Sans", sans-serif;
       margin: 0;
       opacity: 0;
       animation: 1s float-in calc(var(--delay) * 1s) ease-out forwards;
     }
 
-    & * + * {
+    * + * {
       margin-top: 1rem;
     }
+  }
+}
+
+.info-boxes {
+  padding: 8rem;
+
+  .content {
+    margin-inline: auto;
+    max-width: 60rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .text-box {
+    cursor: pointer;
+    min-height: 12rem;
+    outline: 1px solid #535353;
+    padding: 1rem;
+    transition: all 200ms;
+
+    * + * {
+      margin-top: 1rem;
+    }
+
+    h2 {
+      position: relative;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $accent-clr;
+      width: -moz-fit-content;
+      width: fit-content;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 1.5em;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background-color: $accent-clr;
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-color: $accent-clr;
+
+      h2 {
+        color: black;
+
+        &::after {
+          background-color: black;
+        }
+      }
+    }
+  }
+
+  .center-image {
+    display: flex;
+    place-content: center;
   }
 }
 
@@ -115,15 +175,19 @@ h2 {
   gap: 1rem;
   padding-bottom: 4rem;
 
-  & > *:nth-child(1) {
+  & .side-card {
     outline: 1px solid #535353;
     box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 1);
-    margin: 1rem;
     padding: 1rem;
+    margin: 1rem;
     flex-grow: 1;
     flex-basis: 30%;
+
+    & * + * {
+      margin-top: 1rem;
+    }
   }
-  & > *:nth-child(2) {
+  & .card-list {
     flex-grow: 1;
     flex-basis: 70%;
   }
@@ -262,6 +326,7 @@ h2 {
 
 section {
   background-color: #17181a;
+  min-height: 50vh;
 }
 
 footer {

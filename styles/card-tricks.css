@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display:wght@300&family=Noto+Sans+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display:wght@300;700&family=Noto+Sans+Mono&display=swap");
 @-webkit-keyframes delay-appearance {
   from {
     visibility: hidden;
@@ -112,21 +112,75 @@ h2 {
   margin-top: 1rem;
 }
 
+.info-boxes {
+  padding: 8rem;
+}
+.info-boxes .content {
+  margin-inline: auto;
+  max-width: 60rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.info-boxes .text-box {
+  cursor: pointer;
+  min-height: 12rem;
+  outline: 1px solid #535353;
+  padding: 1rem;
+  transition: all 200ms;
+}
+.info-boxes .text-box * + * {
+  margin-top: 1rem;
+}
+.info-boxes .text-box h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #22bbff;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+.info-boxes .text-box h2::after {
+  position: absolute;
+  content: "";
+  top: 1.5em;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #22bbff;
+}
+.info-boxes .text-box:hover, .info-boxes .text-box:active {
+  background-color: #22bbff;
+}
+.info-boxes .text-box:hover h2, .info-boxes .text-box:active h2 {
+  color: black;
+}
+.info-boxes .text-box:hover h2::after, .info-boxes .text-box:active h2::after {
+  background-color: black;
+}
+.info-boxes .center-image {
+  display: flex;
+  place-content: center;
+}
+
 .card-columns {
   display: flex;
   text-align: center;
   gap: 1rem;
   padding-bottom: 4rem;
 }
-.card-columns > *:nth-child(1) {
+.card-columns .side-card {
   outline: 1px solid #535353;
   box-shadow: 0 0 1rem black;
-  margin: 1rem;
   padding: 1rem;
+  margin: 1rem;
   flex-grow: 1;
   flex-basis: 30%;
 }
-.card-columns > *:nth-child(2) {
+.card-columns .side-card * + * {
+  margin-top: 1rem;
+}
+.card-columns .card-list {
   flex-grow: 1;
   flex-basis: 70%;
 }
@@ -249,6 +303,7 @@ h2 {
 
 section {
   background-color: #17181a;
+  min-height: 50vh;
 }
 
 footer {
