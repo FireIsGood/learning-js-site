@@ -3,8 +3,8 @@
 $accent-clr: #22bbff;
 $card-overflow: 12;
 
-@mixin delay-appearance {
-  animation: 250ms delay-appearance 2s ease-out forwards;
+@mixin delay-appearance($extra-delay: 0s) {
+  animation: 250ms delay-appearance calc($extra-delay + 2s) ease-out forwards;
 }
 
 @keyframes delay-appearance {
@@ -61,6 +61,8 @@ h2 {
 }
 
 .title {
+  height: 100vh;
+  display: grid;
   background-image: url("../assets/card-tricks/websitebg2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -85,12 +87,12 @@ h2 {
   }
 
   .title-text {
+    grid-area: 1 / 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh;
 
     h1 {
       font-size: 3rem;
@@ -105,6 +107,45 @@ h2 {
 
     * + * {
       margin-top: 1rem;
+    }
+  }
+
+  .title-classes {
+    visibility: hidden;
+    @include delay-appearance(250ms);
+    grid-area: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    ul {
+      display: flex;
+      position: relative;
+      padding: 0;
+      gap: 0.5rem;
+      list-style-type: none;
+      li {
+        height: calc(60px + 0.8rem);
+        transition: all 200ms;
+        img {
+          width: 60px;
+          margin: 0.4rem;
+        }
+
+        &:hover,
+        &:active {
+          background-color: #333;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        bottom: -0.5rem;
+        height: 0.25rem;
+        background-color: #444;
+      }
     }
   }
 }

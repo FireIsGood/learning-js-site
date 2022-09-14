@@ -68,6 +68,8 @@ h2 {
 }
 
 .title {
+  height: 100vh;
+  display: grid;
   background-image: url("../assets/card-tricks/websitebg2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -91,12 +93,12 @@ h2 {
   border-top: 4px solid rgba(255, 255, 255, 0.8);
 }
 .title .title-text {
+  grid-area: 1/1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
 }
 .title .title-text h1 {
   font-size: 3rem;
@@ -110,6 +112,42 @@ h2 {
 }
 .title .title-text * + * {
   margin-top: 1rem;
+}
+.title .title-classes {
+  visibility: hidden;
+  -webkit-animation: 250ms delay-appearance 2250ms ease-out forwards;
+          animation: 250ms delay-appearance 2250ms ease-out forwards;
+  grid-area: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.title .title-classes ul {
+  display: flex;
+  position: relative;
+  padding: 0;
+  gap: 0.5rem;
+  list-style-type: none;
+}
+.title .title-classes ul li {
+  height: calc(60px + 0.8rem);
+  transition: all 200ms;
+}
+.title .title-classes ul li img {
+  width: 60px;
+  margin: 0.4rem;
+}
+.title .title-classes ul li:hover, .title .title-classes ul li:active {
+  background-color: #333;
+}
+.title .title-classes ul::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: -0.5rem;
+  height: 0.25rem;
+  background-color: #444;
 }
 
 .info-boxes {
