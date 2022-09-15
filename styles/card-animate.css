@@ -3,13 +3,69 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  min-height: 100vh;
   perspective: 10px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.25) 100%), white;
 }
 
 main {
   margin-inline: 1rem;
 }
 
+.title {
+  position: relative;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  font-family: "comic sans ms", sans-serif;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  background-color: #22bbff;
+  z-index: -2;
+  -webkit-animation: title-bg-animate 1s infinite ease-in-out;
+          animation: title-bg-animate 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes title-bg-animate {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  51% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes title-bg-animate {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  51% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
 .deck {
   margin-top: 2rem;
   display: flex;
