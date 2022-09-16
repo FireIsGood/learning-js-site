@@ -8,6 +8,12 @@
   box-sizing: border-box;
 }
 
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 body {
   background-color: lemonchiffon;
   font-family: "Noto Sans", Arial, Helvetica, sans-serif;
@@ -44,6 +50,14 @@ p {
   font-family: "Noto Sans Mono", Courier, monospace;
 }
 
+.input-items {
+  font-size: 1.25rem;
+}
+
+#typed-value:disabled {
+  cursor: not-allowed;
+}
+
 // Game styles
 .prepare {
   font-family: "Noto Sans", Arial, Helvetica, sans-serif !important;
@@ -56,4 +70,42 @@ p {
 .error {
   background-color: lightcoral;
   border: 2px solid red;
+}
+.checking {
+  background-color: lightgreen;
+  border: 2px solid green;
+}
+
+.victory {
+  position: relative;
+  transition: all 250ms;
+  color: green;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: white;
+    border-right: 2rem solid lightgrey;
+    animation: bg-shine 1s ease forwards;
+  }
+}
+
+@keyframes bg-shine {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0) skewX(-65deg);
+  }
+  50% {
+    transform: scaleX(0.05) skewX(-65deg);
+  }
+
+  100% {
+    transform-origin: right;
+    transform: scaleX(0) skewX(-65deg);
+  }
 }
