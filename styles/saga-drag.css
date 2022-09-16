@@ -79,4 +79,5 @@ main > * + * {
   cursor: pointer;
   width: 128px;
   height: 128px;
+  touch-action: none;
 }

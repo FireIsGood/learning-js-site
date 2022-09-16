@@ -90,4 +90,5 @@ main {
   cursor: pointer;
   width: $img-width;
   height: $img-height;
+  touch-action: none;
 }
