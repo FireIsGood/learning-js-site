@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display:wght@300;700&family=Noto+Sans+Mono&display=swap");
 
+$dark-bg-clr: #363636;
+$med-bg-clr: #4f4f4f;
+$dark-accent-clr: #222222;
+$contrast-accent-clr: #0098dc;
+
 *,
 *::after,
 *::before {
@@ -15,7 +20,8 @@ button {
 }
 
 body {
-  background-color: lemonchiffon;
+  background-color: $dark-bg-clr;
+  color: white;
   font-family: "Noto Sans", Arial, Helvetica, sans-serif;
 }
 
@@ -24,7 +30,7 @@ main {
   margin-inline: auto;
   padding: 1rem;
   min-height: 100vh;
-  background-color: white;
+  background-color: $med-bg-clr;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   text-align: center;
 
@@ -44,7 +50,7 @@ p {
 
 // Game Element Styles
 #quote {
-  background-color: antiquewhite;
+  background-color: $dark-accent-clr;
   padding: 1rem 0.5rem;
   line-height: 1.5;
   font-family: "Noto Sans Mono", Courier, monospace;
@@ -58,13 +64,24 @@ p {
   cursor: not-allowed;
 }
 
+#start {
+  background-color: $contrast-accent-clr;
+  padding: 4px;
+  border: none;
+  color: white;
+
+  &:hover {
+    background-color: darken($contrast-accent-clr, 5%);
+  }
+}
+
 // Game styles
 .prepare {
   font-family: "Noto Sans", Arial, Helvetica, sans-serif !important;
 }
 
 .highlight {
-  background-color: yellow;
+  background-color: $contrast-accent-clr;
 }
 
 .error {
@@ -79,7 +96,7 @@ p {
 .victory {
   position: relative;
   transition: all 250ms;
-  color: green;
+  color: lighten($contrast-accent-clr, 20%);
 
   &::after {
     content: "";

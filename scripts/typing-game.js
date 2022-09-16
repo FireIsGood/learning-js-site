@@ -95,9 +95,12 @@ typedValueElem.addEventListener("input", () => {
     quoteElem.childNodes[wordIndex * 2].className = "highlight";
   } else if (
     typedValue.length <= currentWord.length &&
+    typedValue.length > 0 &&
     typedValue === [...currentWord].splice(0, typedValue.length).join("")
   ) {
     typedValueElem.className = "checking";
+  } else if (typedValue.length === 0) {
+    typedValueElem.className = "";
   } else {
     // Error state
     typedValueElem.className = "error";

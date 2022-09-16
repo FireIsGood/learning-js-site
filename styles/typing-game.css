@@ -14,7 +14,8 @@ button {
 }
 
 body {
-  background-color: lemonchiffon;
+  background-color: #363636;
+  color: white;
   font-family: "Noto Sans", Arial, Helvetica, sans-serif;
 }
 
@@ -23,7 +24,7 @@ main {
   margin-inline: auto;
   padding: 1rem;
   min-height: 100vh;
-  background-color: white;
+  background-color: #4f4f4f;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
@@ -41,7 +42,7 @@ p {
 }
 
 #quote {
-  background-color: antiquewhite;
+  background-color: #222222;
   padding: 1rem 0.5rem;
   line-height: 1.5;
   font-family: "Noto Sans Mono", Courier, monospace;
@@ -55,12 +56,22 @@ p {
   cursor: not-allowed;
 }
 
+#start {
+  background-color: #0098dc;
+  padding: 4px;
+  border: none;
+  color: white;
+}
+#start:hover {
+  background-color: #0086c3;
+}
+
 .prepare {
   font-family: "Noto Sans", Arial, Helvetica, sans-serif !important;
 }
 
 .highlight {
-  background-color: yellow;
+  background-color: #0098dc;
 }
 
 .error {
@@ -76,7 +87,7 @@ p {
 .victory {
   position: relative;
   transition: all 250ms;
-  color: green;
+  color: #43c5ff;
 }
 .victory::after {
   content: "";
