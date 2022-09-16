@@ -11,18 +11,18 @@ for (elem of draggableElements) {
 }
 
 function addDraggable(dragElement) {
-  let pos1 = 0;
-  pos2 = 0;
-  pos3 = 0;
-  pos4 = 0;
+  let currX = 0;
+  let currY = 0;
+  let mouseX = 0;
+  let mouseY = 0;
   dragElement.onpointerdown = pointerDrag;
   roundPosition();
 
   function pointerDrag(e) {
     e.preventDefault();
     // console.log(e);
-    pos3 = e.clientX;
-    pos4 = e.clientY;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
     updateZ(draggableOrder, dragElement);
 
     document.onpointermove = elementDrag;
@@ -30,13 +30,13 @@ function addDraggable(dragElement) {
   }
 
   function elementDrag(e) {
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
+    currX = mouseX - e.clientX;
+    currY = mouseY - e.clientY;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
     // console.log(pos1, pos2, pos3, pos4);
-    dragElement.style.top = dragElement.offsetTop - pos2 + "px";
-    dragElement.style.left = dragElement.offsetLeft - pos1 + "px";
+    dragElement.style.top = dragElement.offsetTop - currY + "px";
+    dragElement.style.left = dragElement.offsetLeft - currX + "px";
   }
 
   function stopElementDrag(e) {
