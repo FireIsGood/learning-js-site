@@ -1,0 +1,82 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: burlywood;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+main {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding: 1rem;
+  min-height: 100vh;
+  background-color: white;
+  border: 4px dotted moccasin;
+}
+main > * + * {
+  margin-top: 1rem;
+}
+
+.tier-list {
+  list-style-type: none;
+  margin-left: none;
+  border: 1px solid grey;
+}
+.tier-list li {
+  display: flex;
+}
+.tier-list h2 {
+  width: 8rem;
+  padding-block: calc(3rem + 2px);
+  background-color: rgba(255, 255, 255, 0.3333333333);
+  border-right: 2px solid black;
+  text-align: center;
+}
+.tier-list li:nth-child(1) {
+  background-color: #ff7e7e;
+}
+.tier-list li:nth-child(2) {
+  background-color: #fdc183;
+}
+.tier-list li:nth-child(3) {
+  background-color: #fefe7e;
+}
+.tier-list li:nth-child(4) {
+  background-color: #7ffe7e;
+}
+.tier-list li:nth-child(5) {
+  background-color: #7bc0fb;
+}
+.tier-list li:nth-child(6) {
+  background-color: #7e7efd;
+}
+.tier-list li:nth-child(7) {
+  background-color: #fe7ffd;
+}
+
+.drag-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 1rem;
+  margin-right: 2rem;
+}
+.drag-items > div {
+  position: relative;
+  width: 128px;
+  height: 128px;
+}
+
+.draggable {
+  position: absolute;
+  cursor: pointer;
+  width: 128px;
+  height: 128px;
+}
