@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display:wght@300;700&family=Noto+Sans+Mono&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lemonchiffon;
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+}
+
+main {
+  max-width: 60rem;
+  margin-inline: auto;
+  padding: 1rem;
+  min-height: 100vh;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+main > * + * {
+  margin-top: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: "Noto Sans Display", Arial, Helvetica, sans-serif;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+#quote {
+  background-color: antiquewhite;
+  padding: 1rem 0.5rem;
+  line-height: 1.5;
+  font-family: "Noto Sans Mono", Courier, monospace;
+}
+
+.prepare {
+  font-family: "Noto Sans", Arial, Helvetica, sans-serif !important;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.error {
+  background-color: lightcoral;
+  border: 2px solid red;
+}
