@@ -97,6 +97,7 @@ p {
   position: relative;
   transition: all 250ms;
   color: lighten($contrast-accent-clr, 20%);
+  overflow: hidden;
 
   &::after {
     content: "";

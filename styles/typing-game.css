@@ -88,6 +88,7 @@ p {
   position: relative;
   transition: all 250ms;
   color: #43c5ff;
+  overflow: hidden;
 }
 .victory::after {
   content: "";
