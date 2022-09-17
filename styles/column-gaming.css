@@ -59,3 +59,17 @@ section div .column {
 .content-sidebar > *:nth-child(2) {
   flex-basis: 30%;
 }
+
+ul {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+ul li:nth-of-type(1) {
+  background-color: red;
+  margin-left: auto;
+}
+ul li:nth-of-type(5) {
+  background-color: red;
+  margin-left: auto;
+}

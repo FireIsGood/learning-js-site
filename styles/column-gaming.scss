@@ -67,3 +67,19 @@ section {
     }
   }
 }
+
+ul {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  // background-color: red;
+
+  li:nth-of-type(1) {
+    background-color: red;
+    margin-left: auto;
+  }
+  li:nth-of-type(5) {
+    background-color: red;
+    margin-left: auto;
+  }
+}
