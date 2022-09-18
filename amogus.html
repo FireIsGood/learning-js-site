@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>amogus</title>
-  <!-- <script defer src="./scripts/script.js"></script> -->
-  <link rel="stylesheet" href="./styles/amogus.scss">
-</head>
-<body>
-  <div>
-    <p>amogus</p>
-  </div>
-  <div>
-    <p>amogus</p>
-  </div>
-  <div>
-    <p>amogus</p>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>amogus</title>
+    <script defer src="./scripts/amogus.js"></script>
+    <link rel="stylesheet" href="./styles/amogus.css" />
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <form class="form-data" autocomplete="on">
+          <div>
+            <h2>New? Add your information</h2>
+          </div>
+          <div>
+            <label for="name">Crewmate Name</label>
+            <input class="input-name" id="name" type="text" required />
+          </div>
+          <div>
+            <label for="id-num">ID number</label>
+            <input class="input-id" id="id-num" type="text" required />
+          </div>
+          <button type="submit" class="search-btn">Add Mogi</button>
+        </form>
+        <div class="result">
+          <h2>Results</h2>
+          <p><strong>Name: </strong><span class="user-name"></span></p>
+          <p><strong>Id: </strong><span class="user-id"></span></p>
+          <p>
+            <strong>Suspicion Percent: </strong><span class="user-sus"></span>
+          </p>
+          <button class="clear-btn">Reset</button>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
