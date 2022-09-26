@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Spam</title>
+    <link rel="stylesheet" href="./styles/card-spam.css" />
+    <script defer src="./scripts/card-spam.js"></script>
+  </head>
+  <body>
+    <section class="card-grid">
+      <div class="card">
+        <h3 class="card-header">Cool Text</h3>
+        <p class="card-body">
+          Cool Content with Cool Names and a lot of text so it loops or
+          something cool. And now for the daily news cast. Five individuals have
+          been arrested for various charges, but only one is guilty. The jury
+          can only convict everyone or no one and their decision must be made
+          beforehand based on the total charges. How is the jury to be most just
+          in this harrowing scenario?
+        </p>
+        <div class="card-footer">
+          <button class="card-button" title="vibe with" type="button">
+            I vibe with that
+          </button>
+          <button
+            class="card-button button-outline"
+            title="vibe against"
+            type="button"
+          >
+            I vibe against that
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <template id="card-template">
+    <div class="card js-create">
+      <h3 class="card-header">Replacement Card</h3>
+      <p class="card-body">
+        Wow I wish I was as cool as the old cards. Just as they wished they were
+        as good as the previous ones, I would guess!
+      </p>
+      <div class="card-footer">
+        <button class="card-button" title="vibe with" type="button">
+          I vibe with that
+        </button>
+        <button
+          class="card-button button-outline"
+          title="vibe against"
+          type="button"
+        >
+          I vibe against that
+        </button>
+      </div>
+    </div>
+  </template>
+  <template id="card-template-starter">
+    <div class="card">
+      <h3 class="card-header">Starting Card</h3>
+      <p class="card-body">
+        I'm a cool card that starts out here! Wow look at me go aw yeah! I also
+        have enough text to fill the box and test text wrap or something like
+        that. Also I have even more text so that this has more lines than the
+        replacement card so it's easier to see the difference
+      </p>
+      <div class="card-footer">
+        <button class="card-button" title="vibe with" type="button">
+          I vibe with that
+        </button>
+        <button
+          class="card-button button-outline"
+          title="vibe against"
+          type="button"
+        >
+          I vibe against that
+        </button>
+      </div>
+    </div>
+  </template>
+</html>

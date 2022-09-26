@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@-webkit-keyframes deleteCard {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+@keyframes deleteCard {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+@-webkit-keyframes addCard {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes addCard {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+* {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(240deg, 20%, 96%);
+}
+
+.card-grid {
+  --card-width: 300px;
+  padding: 1rem;
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  min-width: var(--card-width);
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.card .card-header {
+  margin-bottom: 1rem;
+}
+.card .card-footer {
+  margin-top: 1rem;
+  display: flex;
+}
+.card .card-button {
+  --button-clr: hsl(240, 50%, 70%);
+  --button-clr-hover: hsl(240, 50%, 75%);
+  --button-clr-active: hsl(240, 50%, 65%);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--button-clr);
+  color: white;
+  text-transform: capitalize;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.card .card-button + .card-button {
+  margin-left: 1rem;
+}
+.card .card-button:hover, .card .card-button:focus {
+  background-color: var(--button-clr-hover);
+}
+.card .card-button:active {
+  background-color: var(--button-clr-active);
+}
+.card .card-button.button-outline {
+  --button-clr-hover: hsl(240, 50%, 90%);
+  --button-clr-active: hsl(240, 50%, 75%);
+  border: none;
+  background-color: transparent;
+  color: initial;
+  border: 2px solid var(--button-clr);
+}
+.card .card-button.button-outline:hover, .card .card-button.button-outline:focus {
+  background-color: var(--button-clr-hover);
+}
+.card .card-button.button-outline:active {
+  background-color: var(--button-clr-active);
+}
+.card.js-create {
+  -webkit-animation: 0.4s addCard ease-out;
+          animation: 0.4s addCard ease-out;
+}
+.card.js-destroy {
+  -webkit-animation: 0.4s deleteCard ease-out forwards;
+          animation: 0.4s deleteCard ease-out forwards;
+}
