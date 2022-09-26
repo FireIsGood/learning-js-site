@@ -68,6 +68,7 @@ body {
 }
 
 .card {
+  --button-hue: 240;
   padding: 1rem;
   border-radius: 0.5rem;
   min-width: var(--card-width);
@@ -82,9 +83,9 @@ body {
   display: flex;
 }
 .card .card-button {
-  --button-clr: hsl(240, 50%, 70%);
-  --button-clr-hover: hsl(240, 50%, 75%);
-  --button-clr-active: hsl(240, 50%, 65%);
+  --button-clr: hsl(var(--button-hue), 50%, 70%);
+  --button-clr-hover: hsl(var(--button-hue), 50%, 75%);
+  --button-clr-active: hsl(var(--button-hue), 50%, 65%);
   padding: 0.5rem;
   border-radius: 0.25rem;
   background-color: var(--button-clr);
@@ -104,8 +105,8 @@ body {
   background-color: var(--button-clr-active);
 }
 .card .card-button.button-outline {
-  --button-clr-hover: hsl(240, 50%, 90%);
-  --button-clr-active: hsl(240, 50%, 75%);
+  --button-clr-hover: hsl(var(--button-hue), 50%, 90%);
+  --button-clr-active: hsl(var(--button-hue), 50%, 75%);
   border: none;
   background-color: transparent;
   color: initial;

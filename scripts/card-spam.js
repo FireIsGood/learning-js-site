@@ -22,6 +22,9 @@ function removeCard(e) {
 
 function addCard(template) {
   const newCard = template.content.cloneNode(true);
+  const cardBody = newCard.querySelector(".card");
+  const randomColor = Math.floor(360 * Math.random());
+  cardBody.style.setProperty("--button-hue", randomColor);
   cardGrid.append(newCard);
 }
 
