@@ -15,8 +15,8 @@ function removeCard(e) {
   const parentCard = e.target.closest(".card");
   parentCard.classList.add("js-destroy");
   setTimeout(() => {
-    parentCard.remove();
     addCard(cardTemplateReplacement);
+    parentCard.remove();
   }, 400);
 }
 

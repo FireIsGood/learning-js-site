@@ -39,6 +39,7 @@
 
 body {
   background-color: hsl(240, 20%, 96%);
+  overflow-x: hidden;
 }
 
 // Main Styles
@@ -61,7 +62,9 @@ body {
   box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.5);
 
   .card-header {
+    --header-clr: hsl(var(--button-hue), 80%, 30%);
     margin-bottom: 1rem;
+    color: var(--header-clr);
   }
 
   .card-footer {
