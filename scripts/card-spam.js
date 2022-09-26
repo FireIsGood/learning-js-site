@@ -2,6 +2,8 @@ const cardGrid = document.querySelector(".card-grid");
 const cardTemplateStarter = document.getElementById("card-template-starter");
 const cardTemplateReplacement = document.getElementById("card-template");
 // let cards = document.querySelectorAll(".card");
+const sidebarToggle = document.getElementById("sidebar-toggle");
+const sidebar = document.querySelector(".sidebar");
 
 function addGlobalEventListener(type, selector, callback) {
   document.addEventListener(type, (e) => {
@@ -29,6 +31,11 @@ function addCard(template) {
 }
 
 addGlobalEventListener("click", ".card-button", removeCard);
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 20; i++) {
   addCard(cardTemplateStarter);
 }
+
+addGlobalEventListener("click", "#sidebar-toggle", (e) => {
+  e.preventDefault();
+  sidebar.classList.toggle("js-show");
+});

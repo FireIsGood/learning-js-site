@@ -59,6 +59,46 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  z-index: 100;
+  position: relative;
+  min-height: 4rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+header svg {
+  fill: black;
+  cursor: pointer;
+}
+header svg:hover {
+  fill: #555;
+}
+header .sidebar {
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 25rem;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.3s ease, opacity 0.3s;
+  opacity: 0;
+}
+header .sidebar.js-show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+main {
+  position: relative;
+}
+
 .card-grid {
   --card-width: 300px;
   padding: 1rem;

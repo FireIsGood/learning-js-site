@@ -9,31 +9,53 @@
     <script defer src="./scripts/card-spam.js"></script>
   </head>
   <body>
-    <section class="card-grid">
-      <div class="card">
-        <h3 class="card-header">Cool Text</h3>
-        <p class="card-body">
-          Cool Content with Cool Names and a lot of text so it loops or
-          something cool. And now for the daily news cast. Five individuals have
-          been arrested for various charges, but only one is guilty. The jury
-          can only convict everyone or no one and their decision must be made
-          beforehand based on the total charges. How is the jury to be most just
-          in this harrowing scenario?
+    <header>
+      <h1>Card Spam</h1>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="48"
+        width="48"
+        tabindex="1"
+        title="Open Sidebar"
+        id="sidebar-toggle"
+      >
+        <path
+          d="M5.8 36.35v-3.4h36.4v3.4Zm0-10.65v-3.4h36.4v3.4Zm0-10.65v-3.4h36.4v3.4Z"
+        />
+      </svg>
+      <section class="sidebar">
+        <p>
+          this is a <em>fancy sidebar</em> that appears when you click the nav hamburger
         </p>
-        <div class="card-footer">
-          <button class="card-button" title="vibe with" type="button">
-            I vibe with that
-          </button>
-          <button
-            class="card-button button-outline"
-            title="vibe against"
-            type="button"
-          >
-            I vibe against that
-          </button>
+      </section>
+    </header>
+    <main>
+      <section class="card-grid">
+        <div class="card">
+          <h3 class="card-header">Cool Text</h3>
+          <p class="card-body">
+            Cool Content with Cool Names and a lot of text so it loops or
+            something cool. And now for the daily news cast. Five individuals
+            have been arrested for various charges, but only one is guilty. The
+            jury can only convict everyone or no one and their decision must be
+            made beforehand based on the total charges. How is the jury to be
+            most just in this harrowing scenario?
+          </p>
+          <div class="card-footer">
+            <button class="card-button" title="vibe with" type="button">
+              I vibe with that
+            </button>
+            <button
+              class="card-button button-outline"
+              title="vibe against"
+              type="button"
+            >
+              I vibe against that
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   </body>
 
   <template id="card-template">
