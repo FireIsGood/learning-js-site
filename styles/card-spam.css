@@ -56,6 +56,9 @@
 
 body {
   background-color: hsl(240deg, 20%, 96%);
+}
+
+main {
   overflow-x: hidden;
 }
 
@@ -82,12 +85,12 @@ header .sidebar {
   position: absolute;
   right: 0;
   top: 100%;
-  width: 25rem;
+  width: min(25rem, 75vw);
   padding: 1rem;
   background-color: white;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
   transform: translateX(100%);
-  transition: transform 0.3s ease, opacity 0.3s;
+  transition: transform 0.3s ease, opacity 0.3s, display 0s;
   opacity: 0;
 }
 header .sidebar.js-show {
