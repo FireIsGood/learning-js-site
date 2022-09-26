@@ -13,7 +13,6 @@ function removeCard(e) {
   e.preventDefault();
   e.stopPropagation();
   const parentCard = e.target.closest(".card");
-  console.log(parentCard);
   parentCard.classList.add("js-destroy");
   setTimeout(() => {
     parentCard.remove();
