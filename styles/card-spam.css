@@ -71,15 +71,35 @@ body {
 .card {
   --card-hue: 240;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.45rem;
   min-width: var(--card-width);
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 .card .card-header {
   --header-clr: hsl(var(--card-hue), 80%, 30%);
+  position: relative;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
   margin-bottom: 1rem;
   color: var(--header-clr);
+  z-index: 2;
+}
+.card .card-header::after {
+  --header-clr-hover: hsl(var(--card-hue), 60%, 85%);
+  position: absolute;
+  z-index: -1;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: calc(100% + 2ch);
+  height: 40%;
+  background-color: var(--header-clr-hover);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease-out, opacity 0.2s;
 }
 .card .card-footer {
   margin-top: 1rem;
@@ -120,6 +140,10 @@ body {
 }
 .card .card-button.button-outline:active {
   background-color: var(--button-clr-active);
+}
+.card:hover .card-header::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 .card.js-create {
   -webkit-animation: 0.4s addCard ease-out;
