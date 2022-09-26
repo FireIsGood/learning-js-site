@@ -23,11 +23,17 @@ function removeCard(e) {
 }
 
 function addCard(template) {
-  const newCard = template.content.cloneNode(true);
-  const cardBody = newCard.querySelector(".card");
+  const newCardTemplate = template.content.cloneNode(true);
+  const card = newCardTemplate.querySelector(".card");
+  const cardText = card.querySelector(".card-body");
   const randomColor = Math.floor(360 * Math.random());
-  cardBody.style.setProperty("--card-hue", randomColor);
-  cardGrid.append(newCard);
+  card.style.setProperty("--card-hue", randomColor);
+  let stringMod = "";
+  for (let a = 0; a < Math.floor(Math.random() * 30); a++) {
+    stringMod += "extra ";
+  }
+  cardText.textContent += stringMod;
+  cardGrid.append(card);
 }
 
 addGlobalEventListener("click", ".card-button", removeCard);
