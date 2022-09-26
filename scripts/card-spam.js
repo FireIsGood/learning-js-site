@@ -1,6 +1,5 @@
 const cardGrid = document.querySelector(".card-grid");
-const cardTemplateStarter = document.getElementById("card-template-starter");
-const cardTemplateReplacement = document.getElementById("card-template");
+const cardTemplate = document.getElementById("card-template");
 // let cards = document.querySelectorAll(".card");
 const sidebarToggle = document.getElementById("sidebar-toggle");
 const sidebar = document.querySelector(".sidebar");
@@ -17,7 +16,7 @@ function removeCard(e) {
   const parentCard = e.target.closest(".card");
   parentCard.classList.add("js-destroy");
   setTimeout(() => {
-    addCard(cardTemplateReplacement);
+    addCard(cardTemplate);
     parentCard.remove();
   }, 400);
 }
@@ -25,20 +24,25 @@ function removeCard(e) {
 function addCard(template) {
   const newCardTemplate = template.content.cloneNode(true);
   const card = newCardTemplate.querySelector(".card");
+  const cardTitle = card.querySelector(".card-header");
   const cardText = card.querySelector(".card-body");
   const randomColor = Math.floor(360 * Math.random());
   card.style.setProperty("--card-hue", randomColor);
-  let stringMod = "";
-  for (let a = 0; a < Math.floor(Math.random() * 30); a++) {
-    stringMod += "extra ";
-  }
-  cardText.textContent += stringMod;
+
+  const postID = Math.floor(Math.random() * 100);
+  fetch(`https://jsonplaceholder.typicode.com/posts/${postID}`)
+    .then((result) => result.json())
+    .then((result) => {
+      cardTitle.textContent += `Generated Card #${postID}`;
+      cardText.textContent = result.body;
+    });
+
   cardGrid.append(card);
 }
 
 addGlobalEventListener("click", ".card-button", removeCard);
 for (let i = 0; i < 20; i++) {
-  addCard(cardTemplateStarter);
+  addCard(cardTemplate);
 }
 
 addGlobalEventListener("click", "#sidebar-toggle", (e) => {

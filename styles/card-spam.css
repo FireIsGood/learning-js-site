@@ -47,6 +47,22 @@
     filter: blur(0);
   }
 }
+@-webkit-keyframes skeletonPulse {
+  0% {
+    background-color: var(--skeleton-color-light, #ddd);
+  }
+  100% {
+    background-color: var(--skeleton-color-dark, #aaa);
+  }
+}
+@keyframes skeletonPulse {
+  0% {
+    background-color: var(--skeleton-color-light, #ddd);
+  }
+  100% {
+    background-color: var(--skeleton-color-dark, #aaa);
+  }
+}
 * {
   font-family: "Lato", sans-serif;
   margin: 0;
@@ -59,7 +75,8 @@ body {
 }
 
 main {
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
 }
 
 header {
@@ -98,10 +115,6 @@ header .sidebar.js-show {
   opacity: 1;
 }
 
-main {
-  position: relative;
-}
-
 .card-grid {
   --card-width: 300px;
   padding: 1rem;
@@ -127,6 +140,8 @@ main {
   width: fit-content;
   margin-bottom: 1rem;
   color: var(--header-clr);
+  font-size: 1.17rem;
+  font-weight: bold;
   z-index: 2;
 }
 .card .card-header::after {
@@ -195,4 +210,23 @@ main {
 .card.js-destroy {
   -webkit-animation: 0.4s deleteCard ease-out forwards;
           animation: 0.4s deleteCard ease-out forwards;
+}
+
+.skeleton {
+  --skeleton-color-light: hsl(var(--card-hue, 100), 50%, 55%);
+  --skeleton-color-dark: hsl(var(--card-hue, 100), 50%, 45%);
+  height: 0.6rem;
+  width: 100%;
+  margin-block: 0.5rem;
+  opacity: 0.7;
+  background-color: var(--skeleton-color-dark);
+  -webkit-animation: 1s skeletonPulse ease-in-out infinite alternate;
+          animation: 1s skeletonPulse ease-in-out infinite alternate;
+}
+.skeleton:last-of-type {
+  width: 90%;
+}
+.skeleton.skeleton-header {
+  width: 15ch;
+  height: 0.9rem;
 }

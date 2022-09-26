@@ -28,6 +28,15 @@
   }
 }
 
+@keyframes skeletonPulse {
+  0% {
+    background-color: var(--skeleton-color-light, #ddd);
+  }
+  100% {
+    background-color: var(--skeleton-color-dark, #aaa);
+  }
+}
+
 // General Styles
 
 * {
@@ -42,7 +51,8 @@ body {
 }
 
 main {
-  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
 }
 
 // Main Styles
@@ -87,10 +97,6 @@ header {
   }
 }
 
-main {
-  position: relative;
-}
-
 .card-grid {
   --card-width: 300px;
   padding: 1rem;
@@ -115,6 +121,8 @@ main {
     width: fit-content;
     margin-bottom: 1rem;
     color: var(--header-clr);
+    font-size: 1.17rem;
+    font-weight: bold;
     z-index: 2;
 
     &::after {
@@ -197,5 +205,27 @@ main {
 
   &.js-destroy {
     animation: 0.4s deleteCard ease-out forwards;
+  }
+}
+
+// Skeleton Styles
+
+.skeleton {
+  --skeleton-color-light: hsl(var(--card-hue, 100), 50%, 55%);
+  --skeleton-color-dark: hsl(var(--card-hue, 100), 50%, 45%);
+  height: 0.6rem;
+  width: 100%;
+  margin-block: 0.5rem;
+  opacity: 0.7;
+  background-color: var(--skeleton-color-dark);
+  animation: 1s skeletonPulse ease-in-out infinite alternate;
+
+  &:last-of-type {
+    width: 90%;
+  }
+
+  &.skeleton-header {
+    width: 15ch;
+    height: 0.9rem;
   }
 }

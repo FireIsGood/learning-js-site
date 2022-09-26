@@ -33,15 +33,15 @@
       </header>
       <section class="card-grid">
         <div class="card">
-          <h3 class="card-header">Cool Text</h3>
-          <p class="card-body">
+          <div class="card-header">Cool Text</div>
+          <div class="card-body">
             Cool Content with Cool Names and a lot of text so it loops or
             something cool. And now for the daily news cast. Five individuals
             have been arrested for various charges, but only one is guilty. The
             jury can only convict everyone or no one and their decision must be
             made beforehand based on the total charges. How is the jury to be
             most just in this harrowing scenario?
-          </p>
+          </div>
           <div class="card-footer">
             <button class="card-button" title="vibe with" type="button">
               I vibe with that
@@ -61,11 +61,15 @@
 
   <template id="card-template">
     <div class="card js-create">
-      <h3 class="card-header">Replacement Card</h3>
-      <p class="card-body">
-        Wow I wish I was as cool as the old cards. Just as they wished they were
-        as good as the previous ones, I would guess!
-      </p>
+      <div class="card-header">
+        <div class="skeleton skeleton-header"></div>
+      </div>
+      <div class="card-body">
+        <div class="skeleton skeleton-body"></div>
+        <div class="skeleton skeleton-body"></div>
+        <div class="skeleton skeleton-body"></div>
+        <div class="skeleton skeleton-body"></div>
+      </div>
       <div class="card-footer">
         <button class="card-button" title="vibe with" type="button">
           I vibe with that
