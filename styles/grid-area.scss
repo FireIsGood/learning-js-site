@@ -1,0 +1,61 @@
+:root {
+  --header-height: 6rem;
+  --footer-height: 8rem;
+  --main-height: calc(100vh - (var(--header-height) + var(--footer-height)));
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Main Styles
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "header header"
+    "main main"
+    "side side"
+    "footer footer";
+
+  > * {
+    padding: 1rem;
+  }
+}
+
+.header {
+  height: var(--header-height);
+  grid-area: header;
+  background-color: #ec407a; // Pink 400
+}
+.main-content {
+  grid-area: main;
+  background-color: #5c6bc0; // Indigo 400
+}
+.sidebar {
+  grid-area: side;
+  background-color: #66bb6a; // Green 400
+}
+.footer {
+  height: var(--footer-height);
+  grid-area: footer;
+  background-color: #ffee58; // Yellow 400
+}
+
+// Switch to mobile
+
+@media screen and (min-width: 650px) {
+  main {
+    grid-template-areas:
+      "header header"
+      "main side"
+      "footer footer";
+  }
+
+  .main-content {
+    min-height: var(--main-height);
+  }
+}
